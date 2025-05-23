@@ -4,8 +4,6 @@ use App\Http\Controllers\MessageController;
 use App\Models\Message;
 use Illuminate\Support\Facades\Route;
 
-Route::redirect('/messages', '/');
-
 Route::resource('messages', MessageController::class)
 ->only('store', 'show');
 
