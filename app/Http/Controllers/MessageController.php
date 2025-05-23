@@ -9,7 +9,6 @@ class MessageController extends Controller
 {
     public function store(StoreMessageRequest $request)
     {
-        dd('ahhhhh');
         logger()->info('Creating a new message');
         $message = Message::query()->create($request->validated());
 
@@ -21,7 +20,6 @@ class MessageController extends Controller
 
     public function show(Message $message)
     {
-        dd('ahhhhh showing');
         $message->load('children');
 
         return view('messages.show', compact('message'));
