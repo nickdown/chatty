@@ -28,8 +28,8 @@
                 @endforeach
             </ul>
 
-            <form action="/messages" method="POST">
-                @csrf()
+            <form action="{{ route('messages.store') }}" method="POST">
+                @csrf
                 <textarea
                     name="content"
                     rows="4"
