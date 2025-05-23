@@ -9,6 +9,7 @@ class MessageController extends Controller
 {
     public function store(StoreMessageRequest $request)
     {
+        logger()->info('Creating a new message');
         $message = Message::query()->create($request->validated());
 
         if ($message->parent_id) {
